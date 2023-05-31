@@ -1,0 +1,14 @@
+<div *ngIf="products && products.length>0; else  notFoundPage">
+    <div class="grid grid-cols-4">
+        <div *ngFor="let products of products">
+            <a routerLink="/product/{{products?.id}}">
+                <img [src]="products?.imgUrl" alt="" class="pl-[20%]">
+                <p class="text-center">{{products?.name}}</p>
+                <p class="text-center">{{products?.price}}</p>
+
+            </a>
+        </div>
+    </div>
+</div>
+
+<ng-template #notFoundPage>Không có sản phẩm để hiển thị</ng-template>
